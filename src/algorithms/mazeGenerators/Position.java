@@ -1,5 +1,5 @@
 package algorithms.mazeGenerators;
 
 public class Position {
-    int i;
+    int j;
 }
