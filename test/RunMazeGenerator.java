@@ -12,7 +12,7 @@ public class RunMazeGenerator {
         Maze maze = mazeGenerator.generate(100/*rows*/, 100/*columns*/);
         // prints the maze
         maze.print();
-        // get the maze entrance
+        // get the maze entrancer
         Position startPosition = maze.getStartPosition();
         // print the position
         System.out.println(String.format("Start Position: %s", startPosition)); // format "{row,column}"
