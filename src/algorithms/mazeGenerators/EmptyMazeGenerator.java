@@ -1,8 +1,9 @@
 package algorithms.mazeGenerators;
 
-public class EmptyMazeGenerator extends IMazeGenerator {
+public class EmptyMazeGenerator extends AMazaGenerator {
     @Override
     public Maze generate(int row, int col) {
-        return Maze(row,col);
+        Maze grid=new Maze(row,col);
+        return grid;
     }
 }

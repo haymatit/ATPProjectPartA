@@ -6,6 +6,7 @@ public abstract class AMazaGenerator implements IMazeGenerator{
         long before=System.currentTimeMillis();
         generate(row,col);
         long after=System.currentTimeMillis();
-        retern (after-before);
+        return (after-before);
     }
+
 }
