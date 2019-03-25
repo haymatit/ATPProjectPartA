@@ -1,23 +1,36 @@
 package algorithms.mazeGenerators;
 
 public class SimpleMazeGenerator extends AMazaGenerator {
+
     @Override
     public Maze generate(int row, int col) {
-        Maze simple=new Maze(row,col);
-
-        /*
-        int startrow,startcol,endrow,endcol;
-        startrow= (int)(Math.random()*row);
-        startcol= (int)(Math.random()*col);
-        endrow= (int)(Math.random()*row);
-        endcol=(int)(Math.random()*col);
-        while(startrow==endrow && startcol==endcol){
-            endrow= (int)(Math.random()*row);
-            endcol=(int)(Math.random()*col);
+        int [][]grid=new int[row][col];
+        int[] startPosition={0,0};
+        int[] goalPosition=new int[2];
+        /*building walls*/
+        for(int i=0;i<grid.length;i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                grid[i][j]=(int) (Math.random()*2);
+            }
         }
-        simple.setStartPosition(startrow,startcol);
-        simple.setGoalPosition(endrow,endcol);
-        */
+        /*make a way*/
+        boolean end=false;
+        int i=0,j=0,stepper=0;
+        while(end==false && i<row && j<col){
+            grid[i][j]=0;
+            stepper=(int) (Math.random()*2);
+            if(stepper==0)
+                i++;
+            else
+                j++;
+        }
+        if(i>=row)
+            i--;
+        else
+            j--;
+        goalPosition[0]=i;
+        goalPosition[1]=j;
+        Maze simple=new Maze(grid,startPosition,goalPosition);
         return simple;
     }
 }

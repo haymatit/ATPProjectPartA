@@ -11,6 +11,12 @@ public class Maze {
         goalPosition= new int [2];
     }
 
+    public Maze(int[][] grid,int[] startPosition,int[] goalPosition){
+        this.grid=grid;
+        this.goalPosition=goalPosition;
+        this.startPosition=startPosition;
+    }
+
     public int[] getStartPosition() {
         return startPosition;
     }
@@ -21,13 +27,14 @@ public class Maze {
 
     public void Print(){
         for(int i=0;i<grid.length;i++){
+            System.out.println();
             for(int j=0;j<grid[0].length;j++){
                 if(startPosition[0]==i && startPosition[1]==j)
-                    System.out.println("S");
+                    System.out.print("S");
                 else if(goalPosition[0]==i && goalPosition[1]==j)
-                    System.out.println("E");
+                    System.out.print("E");
                 else
-                    System.out.println(grid[i][j]);
+                    System.out.print(grid[i][j]);
             }
         }
     }
@@ -41,4 +48,5 @@ public class Maze {
         this.goalPosition[0] = row;
         this.goalPosition[1] = col;
     }
+
 }
