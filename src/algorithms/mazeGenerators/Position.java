@@ -9,10 +9,18 @@ public class Position {
         this.col = col;
     }
 
+    @Override
+    public String toString() {
+        return "{" +
+                "" + row +
+                ", " + col +
+                '}';
+    }
+    /*
     public void Print(){
         System.out.println(String.format("{%d,%d}",row,col));
     }
-
+    */
     public int getRowIndex() {
         return row;
     }
