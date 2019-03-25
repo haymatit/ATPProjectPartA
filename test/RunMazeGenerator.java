@@ -17,7 +17,6 @@ public class RunMazeGenerator {
         // print the position
         System.out.println(String.format("Start Position: %s", startPosition)); // format "{row,column}"
         // prints the maze exit position
-        System.out.println(String.format("Goal Position: %s",
-                maze.getGoalPosition()));
+        System.out.println(String.format("Goal Position: %s", maze.getGoalPosition()));
     }
 }
